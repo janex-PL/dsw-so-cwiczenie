@@ -25,8 +25,9 @@ then
 	for ((i=1; i<=$loopLimit; i++))
 	do
 		fileName="log$i"
+		mkdir $fileName
 		date="$(date)"
-		echo "$fileName $scriptName $date" >> $fileName
+		echo "$fileName $scriptName $date" >> "./$fileName/$fileName.txt"
 	done
 elif [ $1 == '--init' ] || [ $1 == '-i' ]
 then
