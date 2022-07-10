@@ -6,9 +6,9 @@ then
 elif [ $1 == '--help' ] || [ $1 == '-h' ]
 then
 	echo "Available arguments: "
-	echo " --date : displays current date"
-	echo " --logs NUMBER: creates log file NUMBER times containing file name, script name and current date, default number is 100" 
-	echo " --help : displays this message"
+	echo " --date, -d : displays current date"
+	echo " --logs NUMBER, -l NUMBER : creates log file NUMBER times containing file name, script name and current date, default number is 100" 
+	echo " --help, -h : displays this message"
 elif [ $1 == '--date' ] || [ $1 == '-d' ]
 then
 	date
