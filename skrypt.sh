@@ -8,7 +8,10 @@ then
 	echo "Available arguments: "
 	echo " --date, -d : displays current date"
 	echo " --logs NUMBER, -l NUMBER : creates log file NUMBER times containing file name, script name and current date, default number is 100" 
+	echo " --init, -i: clones git repository"
+	echo " --error NUMBER, -e NUMBER : creates error file NUMBER times containing file name, script name and current date, default number is 100" 
 	echo " --help, -h : displays this message"
+	
 elif [ $1 == '--date' ] || [ $1 == '-d' ]
 then
 	date
