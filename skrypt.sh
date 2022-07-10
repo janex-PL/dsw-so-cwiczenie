@@ -13,7 +13,7 @@ elif [ $1 == '--date' ] || [ $1 == '-d' ]
 then
 	date
 
-elif [ $1 == '--logs' ] || [ $1 == '-l' ]
+elif [ $1 == '--logs' ] || [ $1 == '-l' ] || [ $1 == '--error' ] || [ $1 == '-e' ]
 then
 	scriptName="${0##*/}"i
 	loopLimit=100
@@ -22,9 +22,16 @@ then
 		loopLimit=$2
 	fi
 
+	if [ $1 == '--logs' ] || [ $1 == '-l' ]
+	then
+		baseFileName="log"
+	else
+		baseFileName="error"
+	fi
+
 	for ((i=1; i<=$loopLimit; i++))
 	do
-		fileName="log$i"
+		fileName="$baseFileName$i"
 		mkdir $fileName
 		date="$(date)"
 		echo "$fileName $scriptName $date" >> "./$fileName/$fileName.txt"
