@@ -28,4 +28,7 @@ then
 		date="$(date)"
 		echo "$fileName $scriptName $date" >> $fileName
 	done
+elif [ $1 == '--init' ] || [ $1 == '-i' ]
+then
+	git clone https://github.com/janex-PL/dsw-so-cwiczenie.git
 fi
