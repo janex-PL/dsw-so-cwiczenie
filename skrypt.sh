@@ -12,8 +12,14 @@ fi
 
 if [ $1 == '--logs' ]
 then
-	scriptName="${0##*/}"
-	for i in {1..100}
+	scriptName="${0##*/}"i
+	loopLimit=100
+	if [ $# -eq 2 -a $2 -gt 0 ]
+	then
+		loopLimit=$2
+	fi
+
+	for ((i=1; i<=$loopLimit; i++))
 	do
 		fileName="log$i"
 		date="$(date)"
