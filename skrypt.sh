@@ -3,18 +3,17 @@
 if [ $# -eq 0 ]
 then
 	exit
-
-elif [ $1 == '--help' ]
+elif [ $1 == '--help' ] || [ $1 == '-h' ]
 then
 	echo "Available arguments: "
 	echo " --date : displays current date"
 	echo " --logs NUMBER: creates log file NUMBER times containing file name, script name and current date, default number is 100" 
 	echo " --help : displays this message"
-elif [ $1 == '--date' ]
+elif [ $1 == '--date' ] || [ $1 == '-d' ]
 then
 	date
 
-elif [ $1 == '--logs' ]
+elif [ $1 == '--logs' ] || [ $1 == '-l' ]
 then
 	scriptName="${0##*/}"i
 	loopLimit=100
